@@ -4,6 +4,11 @@ const { makeStyles } = require("@mui/styles");
 
 
 export const useStyles = makeStyles(() => ({
+    drawerStyle:{
+        "& .MuiCollapse-root.MuiCollapse-vertical":{
+            paddingLeft: '20px'
+        }
+    },
 
     wsanimatedArrow: {
         "cursor": "pointer", "width": "30px", "height": "25px", "position": "relative",
@@ -19,6 +24,8 @@ export const useStyles = makeStyles(() => ({
             "bottom": "-8px", "width": "20px",
             "cursor": "pointer", "height": "3px", "background": "#a9a9a9", "position": "absolute", "display": "block", "content": "''"
         },
+
+      
     },
 
     bookBtn: {

@@ -1,24 +1,51 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 
-const CustomCard = () => {
+const CustomCard = ({ index, image, rightImg, title, description }) => {
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card
+      index={index}
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', md: rightImg ? 'row' : 'row-reverse' },
+        alignItems: 'center',
+        marginBottom: '30px',
+        padding: { xs: 2, md: 3 },
+      }}
+    >
       <CardMedia
         component="img"
-        sx={{ width: 160 }}
-        image="https://via.placeholder.com/160"
+        sx={{
+          width: { xs: '100%', md: '40%' },
+          height: 'auto',
+          order: rightImg ? 2 : 1, 
+        }}
+        image={image}
         alt="Card Image"
       />
-      <Grid container>
+
+      <Grid container sx={{ order: 2 }}>
         <Grid item xs={12}>
-          <CardContent>
-            <Typography component="div" variant="h5">
-              Card Title
+          <CardContent sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+            <Typography
+              component="div"
+              variant="h4"
+              sx={{ marginBottom: '10px', fontWeight: '600' }}
+            >
+              {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary" component="p">
-              This is a description of the card. It can be a few sentences long to provide more information about the content.
-            </Typography>
+            {description &&
+              description.map((text, index) => (
+                <Typography
+                  key={index}
+                  variant="body2"
+                  color="text.secondary"
+                  component="p"
+                  sx={{ marginBottom: '8px' }}
+                >
+                  {text}
+                </Typography>
+              ))}
           </CardContent>
         </Grid>
       </Grid>

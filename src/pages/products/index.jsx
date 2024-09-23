@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useStyles } from './products.style';
 import { Box } from '@mui/material';
-import TitleSection from '../../components/shared/TitleSection';
-import { Container1200, ContainerFluid } from '../../components/shared/CustomContainer';
-import HeroSec from '../../components/shared/HeroSec';
+import React, { useEffect } from 'react';
 import CustomCard from '../../components/shared/CustomCard';
+import { Container1200 } from '../../components/shared/CustomContainer';
+import HeroSec from '../../components/shared/HeroSec';
+import { useStyles } from './products.style';
+import { productsData } from './productsData';
 
 
 
@@ -29,8 +29,10 @@ const Products = () => {
       {/* Products */}
       <Box className={classes.productsSliderStyle}>
         <HeroSec title={"Our Products"} />
-        <Container1200 className={"  "} >
-          <CustomCard />
+        <Container1200 className={" pt-12 pb-6 "} >
+          {productsData && productsData.map((db, index) => (
+            <CustomCard index={index} image={db.image} rightImg={db.rightImg} title={db.title} description={db.description} />
+          ))}
         </Container1200>
       </Box>
 

@@ -12,9 +12,16 @@ import AdminDashboards from "./pages/admin/dashboard";
 import Home from "./pages/home";
 import ProtectedRoute from "./state-management/admin/login/ProtectedRoute";
 import Products from './pages/products';
+import ContactUs from './pages/contact';
+import Media from './pages/media';
+import OrganicLiquidFertilizer from './pages/products/OrganicFertilizers/OrganicLiquidFertilizer';
+import withBanner from './hoc/withBanner';
 
 function App() {
   const isAuthenticated = useSelector((state) => state.adminLogin.isAuthenticated);
+
+  const LiquidFertilizer = withBanner(OrganicLiquidFertilizer, `${process.env.PUBLIC_URL}/images/bg/product-banner.webp`, 'Organic Liquid Fertilizer');
+
 
   return (
     <Router>
@@ -29,7 +36,10 @@ function App() {
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/products" element={<Products />} /> */}
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/organic-liquid-fertilizer" element={<LiquidFertilizer />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/contact" element={<ContactUs />} />
        
       </Routes>
       <Footer />

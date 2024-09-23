@@ -7,7 +7,8 @@ export const useStyles = makeStyles(() => ({
         position: 'relative',
         display: 'flex',
         justifyContent: 'center',
-        paddingBottom: '80px'
+        // paddingBottom: '40px',
+        height: '450px'
     },
     ourteambannerimg: {
         width: '100%',

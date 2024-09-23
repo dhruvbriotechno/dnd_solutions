@@ -3,11 +3,15 @@ import { theme } from "../../../theme";
 
 export const useStyles = makeStyles(() => ({
     
+    blackBg:{
+        backgroundColor: 'black'
+    },
+
     productBanner:{
         backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/product-banner.webp)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '400px',
+        height: '300px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

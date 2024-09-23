@@ -29,7 +29,19 @@ export const QuickLinks = [
 
 export const ProductsLinks = [
     {
-        title: 'Link',
+        title: 'Organic fertilizers',
+        link: ''
+    },
+    {
+        title: 'Construction Chemicals',
+        link: ''
+    },
+    {
+        title: 'Regular Cleaning Agents',
+        link: ''
+    },
+    {
+        title: 'Custom Cleaning agent',
         link: ''
     },
 

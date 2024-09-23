@@ -29,9 +29,9 @@ const Footer = () => {
                     <Box className={classes.row}>
 
                         <Box className={'footer-form'}>
-                            <TitleHead title="About DND Solutions" />
+                            <TitleHead title="About DnD Solutions" />
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                            <p>DND Solutions</p>
+                            <p>DnD Solutions</p>
                         </Box>
 
                         <Box>
@@ -85,7 +85,7 @@ const Footer = () => {
                 <ScrollToTop
                     smooth
                     component={
-                        <KeyboardDoubleArrowUpIcon style={{ fontSize: 25 }} />
+                        <KeyboardDoubleArrowUpIcon style={{ fontSize: 25, color: 'black' }} />
                     }
                 />
             </Box>

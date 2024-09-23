@@ -1,31 +1,70 @@
 import React, { useEffect } from 'react';
 import { useStyles } from './about.style';
+import { Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import HeroSec from '../../components/shared/HeroSec';
+import { Container1200 } from '../../components/shared/CustomContainer';
 
 
 
 const About = () => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    useEffect(() => {
-        const scrollToTop = () => {
-          window.scrollTo({
-            top: 0,
-            scroll: "smooth",
-          });
-        };
-    
-        scrollToTop();
-        return () => {};
-      }, []);
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        scroll: "smooth",
+      });
+    };
 
-    return (
-        <>
-           About Page
+    scrollToTop();
+    return () => { };
+  }, []);
 
-           
+  return (
+    <>
+      <Box className={classes.productsSliderStyle}>
+        <HeroSec title={"About Us"} />
+        <Container1200 className={" pt-12 pb-6 "} >
+          <Card sx={{ display: 'flex', marginBottom: '30px', boxShadow: 'none' }}>
+            <Grid container>
+              <Grid item xs={12}>
+                <CardContent sx={{}} >
+                  <Typography component="div" variant="h4" sx={{ marginBottom: '15px', fontWeight: '600' }}>
+                    Welcome to DnD Solutions!
+                  </Typography>
 
-        </>
-    )
+                  <Typography variant="body2" color="text.secondary" component="p" sx={{ marginBottom: '16px', fontSize: '16px' }}>
+                    Founded in 2017, DnD Solutions is a forward-thinking company dedicated to providing high-quality, innovative solutions across various industries. With a diverse product portfolio, we specialize in manufacturing:
+                  </Typography>
+
+                  <ul className="list-disc list-inside pl-4 space-y-2 mb-4 text-base">
+                    <li><strong>Organic Fertilizers:</strong> Liquid, solid, and capsule forms designed to enhance plant growth while maintaining environmental sustainability.</li>
+                    <li><strong>Nano-Technological Construction Bonding and Waterproofing Chemicals:</strong> Advanced solutions for superior bonding and long-lasting waterproofing, ensuring durability and performance in construction projects.</li>
+                    <li><strong>Custom Cleaning Agents:</strong> Tailor-made cleaning solutions to meet the unique needs of different industries, ensuring efficiency and effectiveness in maintaining cleanliness and hygiene.</li>
+                  </ul>
+                  <Typography variant="body2" color="text.secondary" component="p" sx={{ marginBottom: '16px', fontSize: '16px' }}>
+                    Our commitment to quality, sustainability, and innovation drives us to deliver products that not only meet but exceed industry standards. At DnD Solutions, we are passionate about leveraging technology and expertise to support your success, whether you're cultivating crops, constructing durable structures, or maintaining pristine environments.</Typography>
+                  <Typography variant="body2" color="text.secondary" component="p" sx={{ marginBottom: '16px', fontSize: '16px' }}>Thank you for choosing DnD Solutions. We look forward to partnering with you and contributing to your achievements.</Typography>
+                </CardContent>
+              </Grid>
+            </Grid>
+
+            <CardMedia
+              component="img"
+              sx={{ marginLeft: '40px' }}
+              image={`${process.env.PUBLIC_URL}/images/service/adjuvants.webp`}
+              alt="Card Image"
+            />
+          </Card>
+        </Container1200>
+      </Box>
+
+
+
+
+    </>
+  )
 }
 
 export default About

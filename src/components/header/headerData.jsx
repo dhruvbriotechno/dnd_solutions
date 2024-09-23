@@ -12,6 +12,41 @@ export const menuListDesktop = [
     {
         title: 'Our Products',
         link: '/products',
+        subMenu: [
+            {
+                title: 'Organic fertilizers',
+                subMenu: [
+                    { title: 'Organic Liquid Fertilizer', link: '/products/organic-liquid-fertilizer' },
+                    { title: 'Bio based Organic solid Fertilizer', link: '/products' },
+                    { title: 'Organic Active Capsule Fertilizer', link: '/products' },
+                ]
+            },
+            {
+                title: 'Construction Chemicals',
+                subMenu: [
+                    { title: 'Concrete Bonding Powder', link: '/products' },
+                    { title: 'Nano technology based Water proofing Chemical', link: '/products' },
+                ]
+            },
+            {
+                title: 'Regular Cleaning Agents',
+                subMenu: [
+                    { title: 'Floor Cleaner', link: '/products' },
+                    { title: 'Dishwasher Gel', link: '/products' },
+                    { title: 'Textile Washing Matic liquid', link: '/products' },
+                    { title: 'Glass and surface Cleaner', link: '/products' },
+                ]
+            },
+            {
+                title: 'Custom Cleaning agent',
+                subMenu: [
+                    { title: 'Rust cleaner', link: '/products' },
+                    { title: 'Oxidation cleaner', link: '/products' },
+                    { title: 'Custom Floor Cleaner', link: '/products' },
+                    { title: 'Custom profile Cleaner', link: '/products' },
+                ]
+            },
+        ]
     },
     {
         title: 'Media',
@@ -35,7 +70,42 @@ export const menuListMobile = [
     },
     {
         title: 'Our Products',
-        link: '/products',
+        // link: '/products',
+        subMenu: [
+            {
+                title: 'Organic fertilizers',
+                subMenu: [
+                    { title: 'Organic Liquid Fertilizer', link: '/products' },
+                    { title: 'Bio based Organic solid Fertilizer', link: '/products' },
+                    { title: 'Organic Active Capsule Fertilizer', link: '/products' },
+                ]
+            },
+            {
+                title: 'Construction Chemicals',
+                subMenu: [
+                    { title: 'Concrete Bonding Powder', link: '/products' },
+                    { title: 'Nano technology based Water proofing Chemical', link: '/products' },
+                ]
+            },
+            {
+                title: 'Regular Cleaning Agents',
+                subMenu: [
+                    { title: 'Floor Cleaner', link: '/products' },
+                    { title: 'Dishwasher Gel', link: '/products' },
+                    { title: 'Textile Washing Matic liquid', link: '/products' },
+                    { title: 'Glass and surface Cleaner', link: '/products' },
+                ]
+            },
+            {
+                title: 'Custom Cleaning agent',
+                subMenu: [
+                    { title: 'Rust cleaner', link: '/products' },
+                    { title: 'Oxidation cleaner', link: '/products' },
+                    { title: 'Custom Floor Cleaner', link: '/products' },
+                    { title: 'Custom profile Cleaner', link: '/products' },
+                ]
+            },
+        ]
     },
     {
         title: 'Media',
@@ -58,15 +128,7 @@ export const adminLinks = [
         title: 'Offer',
         link: '/admin/dashboard?tab=offer',
     },
-    
+
 ]
 
 
-// Website Contain
-// 1. About US
-// 2. Services
-// 3. Offer of the Month
-// 4. Gallery
-// 5. Location
-// 6. Our Team
-// 7. Book Appointment

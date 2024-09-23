@@ -1,45 +1,32 @@
-import slider1 from "../../assets/sliderMain/geetanjali-salon-1-1.jpg"
-import slider2 from "../../assets/sliderMain/geetanjali-salon-1.jpg"
-import slider3 from "../../assets/sliderMain/june-jamboree-website-banner.jpg"
-import slider4 from "../../assets/sliderMain/salon-banners-22.jpg"
 
-import HourglassTopIcon from '@mui/icons-material/HourglassTop';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 
-import salon from "../../assets/home/hair-stylist-phoenix-citadel-mall-lndore.jpg"
-import owner from "../../assets/home/owner.png"
 // Brands 
-import alga from "../../assets/brand/alga.jpg"
-import allmaleinc from "../../assets/brand/allmaleinc.jpg"
-import dyson from "../../assets/brand/dyson.jpg"
-import footlogix from "../../assets/brand/footlogix.jpg"
-import innoluxe from "../../assets/brand/innoluxe.jpg"
-import kanpeki from "../../assets/brand/kanpeki.jpg"
-import kerastase from "../../assets/brand/kerastase.jpg"
-import loreal from "../../assets/brand/loreal.jpg"
-import thalgo from "../../assets/brand/thalgo.jpg"
+import alga from "../../assets/brand/alga.jpg";
+import allmaleinc from "../../assets/brand/allmaleinc.jpg";
+import dyson from "../../assets/brand/dyson.jpg";
+import footlogix from "../../assets/brand/footlogix.jpg";
+import innoluxe from "../../assets/brand/innoluxe.jpg";
+import kanpeki from "../../assets/brand/kanpeki.jpg";
+import kerastase from "../../assets/brand/kerastase.jpg";
+import loreal from "../../assets/brand/loreal.jpg";
+import thalgo from "../../assets/brand/thalgo.jpg";
 // Blog 
-import blog1 from "../../assets/blog/1.png"
-import blog2 from "../../assets/blog/2.png"
-import blog3 from "../../assets/blog/3.png"
+import blog1 from "../../assets/blog/1.png";
+import blog2 from "../../assets/blog/2.png";
+import blog3 from "../../assets/blog/3.png";
 // Testimonial 
-import team1 from "../../assets/Images/team1.jpg"
-import team2 from "../../assets/Images/team2.jpg"
-import team3 from "../../assets/Images/team3.jpg"
-import team4 from "../../assets/Images/team4.jpg"
+import team1 from "../../assets/Images/team1.jpg";
+import team2 from "../../assets/Images/team2.jpg";
+import team3 from "../../assets/Images/team3.jpg";
+import team4 from "../../assets/Images/team4.jpg";
 
 // Service 
-import Makeup from "../../assets/service/Makeup.jpg"
-import hair from "../../assets/service/hair.jpg"
-import skin from "../../assets/service/skin.jpeg"
 
 
 
-import image1 from '../../assets/Images/service-slider1.jpg';
-import image2 from '../../assets/Images/service-slider2.jpg';
-import image3 from '../../assets/Images/service-slider2.jpg';
-import image4 from '../../assets/Images/service-slider3.jpg';
 
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -48,14 +35,14 @@ import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ModeStandbyIcon from '@mui/icons-material/ModeStandby';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms';
-import NearMeIcon from '@mui/icons-material/NearMe';
-import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import PersonIcon from '@mui/icons-material/Person';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import NearMeIcon from '@mui/icons-material/NearMe';
+import PersonIcon from '@mui/icons-material/Person';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 
 // Main Slider 
