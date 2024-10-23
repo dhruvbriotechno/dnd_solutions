@@ -1,5 +1,6 @@
 import { makeStyles } from "@mui/styles";
 import { theme } from "../../../theme";
+import productBannerBg from "../../../assets/img/main-slider/2.jpg"
 
 export const useStyles = makeStyles(() => ({
     
@@ -8,7 +9,7 @@ export const useStyles = makeStyles(() => ({
     },
 
     productBanner:{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/product-banner.webp)`,
+        backgroundImage: `url(${productBannerBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '300px',

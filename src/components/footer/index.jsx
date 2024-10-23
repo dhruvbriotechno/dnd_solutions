@@ -1,12 +1,12 @@
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import { Box } from '@mui/material';
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import ScrollToTop from "react-scroll-to-top";
 import { menuListMobile } from '../header/headerData';
 import { Container1320 } from '../shared/CustomContainer';
 import { useStyles } from './footer.style';
-import { ProductsLinks, socialLinks } from './footerData';
-import ScrollToTop from "react-scroll-to-top";
-import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import { ProductsLinks } from './footerData';
 
 
 const Footer = () => {
@@ -30,8 +30,7 @@ const Footer = () => {
 
                         <Box className={'footer-form'}>
                             <TitleHead title="About DnD Solutions" />
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                            <p>DnD Solutions</p>
+                            <p>Founded in 2017, DnD Solutions is a forward-thinking company dedicated to providing high-quality, innovative solutions across various industries. With a diverse product portfolio, we specialize in manufacturing:</p>
                         </Box>
 
                         <Box>

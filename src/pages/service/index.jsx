@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import CarouselComponent from "../../components/Slider/index";
 import CustomTabs from "../../components/service-tab/tab";
 import {
-    Container100,
-    Container1140
+  Container100,
+  Container1140
 } from "../../components/shared/CustomContainer";
 import { useStylesGloble } from "../../global.style";
 import { settingsSlider, slidesMain } from "./serviceData";

@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Button, IconButton, CircularProgress, Box, Grid, Stack, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useStyles } from './slider.style';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import EditIcon from '@mui/icons-material/Edit';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { Box, Button, CircularProgress, Grid, IconButton, ListItem, ListItemAvatar, ListItemText, Stack } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchOffer } from '../../../state-management/admin/offer/getAllOffer/offerActions';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { deleteOffer } from '../../../state-management/admin/offer/deleteOffer/offerActions';
-import { Container1320 } from '../../shared/CustomContainer';
+import { fetchOffer } from '../../../state-management/admin/offer/getAllOffer/offerActions';
+import { getOfferById } from '../../../state-management/admin/offer/getSingleOffer/offerActions';
 import { ButtonBorder } from '../../shared/ButtonCustom';
+import { Container1320 } from '../../shared/CustomContainer';
 import { MyModalWithHeader } from '../../shared/MyModal';
 import AddOffer from './AddOffer';
 import EditOffer from './EditOffer';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { getOfferById } from '../../../state-management/admin/offer/getSingleOffer/offerActions';
+import { useStyles } from './slider.style';
 
 import { Loader } from "../../shared/Loader";
 

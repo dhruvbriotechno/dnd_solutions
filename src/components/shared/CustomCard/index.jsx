@@ -1,5 +1,5 @@
+import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 
 const CustomCard = ({ index, image, rightImg, title, description }) => {
   return (

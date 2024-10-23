@@ -1,7 +1,7 @@
-import { Badge, Box } from '@mui/material'
-import React from 'react'
+import { Badge, Box } from '@mui/material';
+import React from 'react';
+import noImage from "../../assets/bg/no-banner.jpg";
 import { useStyles } from './BlogCard.style';
-import noImage from "../../assets/bg/no-banner.jpg"
 
 const BlogCard = ({ data }) => {
     const classes = useStyles();

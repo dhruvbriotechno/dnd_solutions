@@ -1,6 +1,5 @@
 import { Badge, Box } from '@mui/material';
 import React from 'react';
-import { ButtonTrans } from '../shared/ButtonCustom';
 import { useStyles } from './ServiceCard.style';
 
 const ServiceCard = ({ data }) => {

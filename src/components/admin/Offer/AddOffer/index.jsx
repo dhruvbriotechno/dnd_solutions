@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Button, TextField, Typography, Box, Grid } from '@mui/material';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
-import { addOffer } from '../../../../state-management/admin/offer/addOffer/offerActions';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import AddIcon from '@mui/icons-material/Add';
-import { ButtonBorder, ButtonFullBlack } from '../../../shared/ButtonCustom/index';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import { useFormik } from 'formik';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import * as Yup from 'yup';
+import { addOffer } from '../../../../state-management/admin/offer/addOffer/offerActions';
+import { ButtonFullBlack } from '../../../shared/ButtonCustom/index';
 
 const AddOffer = ({handleCloseAdd}) => {
   const [preview, setPreview] = useState(null);

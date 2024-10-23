@@ -23,7 +23,10 @@ export const useStyles = makeStyles(() => ({
         left: '50%',
         transform: 'translate(-50%, -50%)',
         color: '#FFFFFF',
-        fontSize: '57px'
+        fontSize: '57px',
+        textAlign: 'center',
+        background: '#0000007a',
+        padding: '30px',
     },
 
     [theme.breakpoints.down('md')]: {

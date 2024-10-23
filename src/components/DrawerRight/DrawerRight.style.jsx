@@ -4,10 +4,15 @@ const { makeStyles } = require("@mui/styles");
 
 
 export const useStyles = makeStyles(() => ({
+    
+    // menuLink:{"textDecoration":"none","color":"inherit"},
+    // activeLink:{"fontWeight":"bold","color":"#1976d2","backgroundColor":"#f0f0f0"},
+
     drawerStyle:{
         "& .MuiCollapse-root.MuiCollapse-vertical":{
             paddingLeft: '20px'
         }
+        
     },
 
     wsanimatedArrow: {
@@ -50,7 +55,8 @@ export const useStyles = makeStyles(() => ({
     },
     menuLink: {
         "color": "#666",
-        "display": "block", "fontSize": "0.9rem", "fontWeight": "600", "letterSpacing": "0.09375rem", "textTransform": "uppercase", "margin": "0 9px", "lineHeight": "50px", "textDecoration": "none",
+        "display": "block", "fontSize": "0.9rem", "fontWeight": "600", "letterSpacing": "0.09375rem", "textTransform": "uppercase", "margin": "0 9px", "lineHeight": "20px", "textDecoration": "none",
+        padding: '10px 0'
 
     },
 

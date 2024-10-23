@@ -17,15 +17,15 @@ export const menuListDesktop = [
                 title: 'Organic fertilizers',
                 subMenu: [
                     { title: 'Organic Liquid Fertilizer', link: '/products/organic-liquid-fertilizer' },
-                    { title: 'Bio based Organic solid Fertilizer', link: '/products' },
-                    { title: 'Organic Active Capsule Fertilizer', link: '/products' },
+                    { title: 'Bio based Organic solid Fertilizer', link: '/products/bio-based-organic-solid-fertilizer' },
+                    { title: 'Organic Active Capsule Fertilizer', link: '/products/organic-active-capsule-fertilizer' },
                 ]
             },
             {
                 title: 'Construction Chemicals',
                 subMenu: [
-                    { title: 'Concrete Bonding Powder', link: '/products' },
-                    { title: 'Nano technology based Water proofing Chemical', link: '/products' },
+                    { title: 'Concrete Bonding Powder', link: '/products/concrete-bonding-powder' },
+                    { title: 'Nano technology based Water proofing Chemical', link: '/products/nano-technology-based-water-proofing-chemical' },
                 ]
             },
             {
@@ -75,15 +75,15 @@ export const menuListMobile = [
             {
                 title: 'Organic fertilizers',
                 subMenu: [
-                    { title: 'Organic Liquid Fertilizer', link: '/products' },
-                    { title: 'Bio based Organic solid Fertilizer', link: '/products' },
-                    { title: 'Organic Active Capsule Fertilizer', link: '/products' },
+                    { title: 'Organic Liquid Fertilizer', link: '/products/organic-liquid-fertilizer' },
+                    { title: 'Bio based Organic solid Fertilizer', link: '/products/bio-based-organic-solid-fertilizer' },
+                    { title: 'Organic Active Capsule Fertilizer', link: '/products/organic-active-capsule-fertilizer' },
                 ]
             },
             {
                 title: 'Construction Chemicals',
                 subMenu: [
-                    { title: 'Concrete Bonding Powder', link: '/products' },
+                    { title: 'Concrete Bonding Powder', link: '/products/concrete-bonding-powder' },
                     { title: 'Nano technology based Water proofing Chemical', link: '/products' },
                 ]
             },

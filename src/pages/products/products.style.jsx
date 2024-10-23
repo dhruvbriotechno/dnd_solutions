@@ -1,35 +1,27 @@
-import { makeStyles } from "@mui/styles";
-import { theme } from "../../theme";
+const { makeStyles } = require("@mui/styles");
 
 export const useStyles = makeStyles(() => ({
-    
-    productBanner:{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/product-banner.webp)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '400px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#fff',
-        fontSize: '3rem',
-        fontWeight: 'bold',
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+    root: {
+        "& span, p": {
+            fontSize: '1.1rem !important',
+            fontWeight: '400 !important',
+            color: '#383838 !important'
+        }
     },
-   
-  
 
+    productTitle: {
+        fontSize: '2.2rem !important',
+        fontWeight: '600 !important',
+        color: '#0a7639 !important'
+    },
 
-    // ====================================
-    // ====================================
-    [theme.breakpoints.down('md')]: {
-       
+    secTitle:{
+        fontSize: '1.5rem !important',
+        fontWeight: '500 !important',
+        color: '#000 !important'
     },
-    [theme.breakpoints.down('sm')]: {
-       
 
-    },
-    [theme.breakpoints.down('xs')]: {
-       
-    },
-}));
+    listText: {
+
+    }
+}))

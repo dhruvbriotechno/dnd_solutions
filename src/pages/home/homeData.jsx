@@ -24,10 +24,6 @@ import team3 from "../../assets/Images/team3.jpg";
 import team4 from "../../assets/Images/team4.jpg";
 
 // Service 
-
-
-
-
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupsIcon from '@mui/icons-material/Groups';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
@@ -44,12 +40,29 @@ import NearMeIcon from '@mui/icons-material/NearMe';
 import PersonIcon from '@mui/icons-material/Person';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
+// Product 
+import product1 from "../../assets/img/images/products/phos-sachets-new.webp";
+
+// Main Slider 
+import slide1 from '../../assets/img/main-slider/1.jpg';
+import slide2 from '../../assets/img/main-slider/2.jpg';
+import slide3 from '../../assets/img/main-slider/3.jpg';
+
+import aboutImg from '../../assets/img/images/about/about.webp';
+
+// Service 
+import adjuvants from '../../assets/img/images/service/adjuvants.webp';
+import inoculants from '../../assets/img/images/service/inoculants.webp';
+import stimulant from '../../assets/img/images/service/stimulant.webp';
+
+import dummyProduct from '../../assets/img/images/dummyProduct.jpg';
+import dummyImage from '../../assets/img/images/dummy.jpg';
 
 // Main Slider 
 export const slidesMain = [
-  { image: `${process.env.PUBLIC_URL}/images/mainSlider/new-slide-01.webp`, content: 'This is the first slide' },
-  { image: `${process.env.PUBLIC_URL}/images/mainSlider/new-slide-02.webp`, content: 'This is the first slide' },
-  { image: `${process.env.PUBLIC_URL}/images/mainSlider/new-slide-03.webp`, content: 'This is the first slide' },
+  { image: slide1, content: 'This is the first slide' },
+  { image: slide2, content: 'This is the second slide' },
+  { image: slide3, content: 'This is the third slide' },
 ];
 // Main Slider Setting 
 // export const settingsMainSlider = {
@@ -93,7 +106,7 @@ export const aboutUsData = [
   {
     imgPosition: 'right',
     title: 'Organic Bio Fertilizer',
-    image: `${process.env.PUBLIC_URL}/images/about/about.webp`,
+    image: aboutImg,
     description: ['Largely most of the farmers know that soil health is critical to their business.', '"We are not treating the plant, we are treating the soil. We feel if you treat the soil right and if you take care of the soil, your crops will definitely rise"']
   },
 ];
@@ -237,20 +250,20 @@ export const blogData = [
 // Our Services 
 export const servicesData = [
   {
-    image: `${process.env.PUBLIC_URL}/images/service/adjuvants.webp`,
+    image: dummyImage,
     title: 'Bio Pesticide/Fungicide',
   },
   {
-    image: `${process.env.PUBLIC_URL}/images/service/inoculants.webp`,
-    title: "Nano Bio Fertilizers",
+    image: dummyImage,
+    title: 'Nano Bio Fertilizers',
   },
   {
-    image: `${process.env.PUBLIC_URL}/images/service/stimulant.webp`,
-    title: "Bio Stimulant - PGR",
+    image: dummyImage,
+    title: 'Bio Stimulant - PGR',
   },
   // {
-  //     image: `${process.env.PUBLIC_URL}/images/service/bio-stimulants.webp`,
-  //     title: "Soil Application for Bio Fertilizers", 
+  //   image: bioStimulants,
+  //   title: 'Soil Application for Bio Fertilizers',
   // },
 ];
 
@@ -337,13 +350,40 @@ export const settingsProductsSlider = {
   autoplay: false,
   autoplaySpeed: 3000,
   prevArrow: <ArrowBackIosNewIcon />,
-  nextArrow: <ArrowForwardIosIcon />
+  nextArrow: <ArrowForwardIosIcon />,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 };
 
 export const slidesProducts = [
-  { image: `${process.env.PUBLIC_URL}/images/products/phos-sachets-new.webp`, content: 'Potash Bio Fertilizer Sachets' },
-  { image: `${process.env.PUBLIC_URL}/images/products/phos-sachets-new.webp`, content: 'Potash Bio Fertilizer Sachets' },
-  { image: `${process.env.PUBLIC_URL}/images/products/phos-sachets-new.webp`, content: 'Potash Bio Fertilizer Sachets' },
+  { image: dummyImage, content: 'Potash Bio Fertilizer Sachets' },
+  { image: dummyImage, content: 'Potash Bio Fertilizer Sachets' },
+  { image: dummyImage, content: 'Potash Bio Fertilizer Sachets' },
 ];
 
 

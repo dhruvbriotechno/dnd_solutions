@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Button, TextField, Alert, Typography, CircularProgress, Box, Grid } from '@mui/material';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { updateOffer } from '../../../../state-management/admin/offer/updateOffer/offerActions';
-import { getOfferById } from '../../../../state-management/admin/offer/getSingleOffer/offerActions';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { ButtonBorder, ButtonFullBlack } from '../../../shared/ButtonCustom/index'
-import { Loader } from '../../../shared/Loader';
+import { Alert, Box, Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
+import { useFormik } from 'formik';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import * as Yup from 'yup';
+import { getOfferById } from '../../../../state-management/admin/offer/getSingleOffer/offerActions';
+import { updateOffer } from '../../../../state-management/admin/offer/updateOffer/offerActions';
+import { ButtonFullBlack } from '../../../shared/ButtonCustom/index';
+import { Loader } from '../../../shared/Loader';
 
 
 const EditOffer = ({ offerId, handleCloseEdit }) => {

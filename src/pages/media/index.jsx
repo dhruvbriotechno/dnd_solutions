@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useStyles } from './media.style';
 import { Box } from '@mui/material';
-import HeroSec from '../../components/shared/HeroSec';
+import React, { useEffect } from 'react';
 import { Container1200 } from '../../components/shared/CustomContainer';
+import HeroSec from '../../components/shared/HeroSec';
+import { useStyles } from './media.style';
 
 
 

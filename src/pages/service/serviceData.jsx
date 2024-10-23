@@ -1,9 +1,8 @@
-import image1 from '../../assets/Images/service-slider1.jpg';
-import image2 from '../../assets/Images/service-slider2.jpg';
-import image3 from '../../assets/Images/service-slider2.jpg';
-import image4 from '../../assets/Images/service-slider3.jpg';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import image1 from '../../assets/Images/service-slider1.jpg';
+import { default as image2, default as image3 } from '../../assets/Images/service-slider2.jpg';
+import image4 from '../../assets/Images/service-slider3.jpg';
 
 export const slidesMain = [
     { image: image1},

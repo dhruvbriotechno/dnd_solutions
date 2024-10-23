@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { AppBar, Toolbar, Box, Button, Menu, MenuItem } from "@mui/material";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useStyles } from "./header.style";
-import { adminLinks, menuListDesktop, menuListMobile } from "./headerData";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack"; // Import Back arrow icon
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-import DrawerRight from "../DrawerRight";
+import { AppBar, Box, Button, Menu, MenuItem, Toolbar } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { logout } from "../../state-management/admin/login/loginActions";
+import DrawerRight from "../DrawerRight";
 import { Container10 } from "../shared/CustomContainer";
-
+import { useStyles } from "./header.style";
+import { adminLinks, menuListDesktop } from "./headerData";
+// import logo from "../../assets/img/images/logo.png"
 const Header = () => {
   const classes = useStyles();
   const location = useLocation();
@@ -47,11 +48,26 @@ const Header = () => {
 
   const handleMenuOpen = (event, subMenu = []) => {
     setMenuAnchorEl(event.currentTarget);
-    setSubmenuItems(subMenu);
+
+    // If "Organic Fertilizers" submenu is opened, add a back arrow to go back to "Our Products"
+    if (subMenu.some(item => item.title === "Organic Fertilizers")) {
+      // Find the "Our Products" menu and set it in state for the back navigation
+      const ourProductsMenu = menuListDesktop.find(menu => menu.title === "Our Products").subMenu;
+      setSubmenuItems([{ title: "Back to Products", isBack: true, subMenu: ourProductsMenu }, ...subMenu]);
+    } else {
+      setSubmenuItems(subMenu);
+    }
   };
 
   const handleSubmenuOpen = (event, subMenu = []) => {
     setSubmenuAnchorEl(event.currentTarget);
+    setSubmenuItems(subMenu);
+  };
+
+  const handleBackClick = (subMenu) => {
+    // Handle back arrow click, open the "Our Products" menu again
+    setMenuAnchorEl(null);
+    setSubmenuAnchorEl(null);
     setSubmenuItems(subMenu);
   };
 
@@ -75,7 +91,8 @@ const Header = () => {
           <Toolbar>
             <Box className={classes.logoLeftSide}>
               <NavLink to="/">
-                <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Logo" />
+                {/* <img src={require(`${process.env.REACT_APP_IMAGES_PATH}/images/logo.png`} alt="Logo" /> */}
+                <img src={require(`${process.env.REACT_APP_IMAGES_PATH}/images/logo.png`)} alt="My Image" />
               </NavLink>
             </Box>
 
@@ -106,21 +123,21 @@ const Header = () => {
                         {submenuItems.map((subItem, subIndex) => (
                           <MenuItem
                             key={subIndex}
-                            onClick={subItem.subMenu ? (e) => handleSubmenuOpen(e, subItem.subMenu) : handleMenuClose}
+                            onClick={
+                              subItem.isBack
+                                ? () => handleBackClick(subItem.subMenu) // If it's a back item, go back
+                                : subItem.subMenu
+                                ? (e) => handleSubmenuOpen(e, subItem.subMenu)
+                                : handleMenuClose
+                            }
                           >
-                            <NavLink to={subItem.link || "#"}>{subItem.title}</NavLink>
-                            {subItem.subMenu && (
-                              <Menu
-                                anchorEl={submenuAnchorEl}
-                                open={Boolean(submenuAnchorEl)}
-                                onClose={handleMenuClose}
-                              >
-                                {subItem.subMenu.map((nestedItem, nestedIndex) => (
-                                  <MenuItem key={nestedIndex} onClick={handleMenuClose}>
-                                    <NavLink to={nestedItem.link}>{nestedItem.title}</NavLink>
-                                  </MenuItem>
-                                ))}
-                              </Menu>
+                            {subItem.isBack ? (
+                              <>
+                                <ArrowBackIcon style={{ marginRight: "8px" }} />
+                                {subItem.title}
+                              </>
+                            ) : (
+                              <NavLink to={subItem.link || "#"}>{subItem.title}</NavLink>
                             )}
                           </MenuItem>
                         ))}
@@ -137,7 +154,7 @@ const Header = () => {
               <Button onClick={handleLogout} color="inherit">Logout</Button>
             )}
 
-            <DrawerRight menu={menuListMobile} adminLinks={adminLinks} isAdmin={isAdmin} />
+            <DrawerRight menu={menuListDesktop} adminLinks={adminLinks} isAdmin={isAdmin} />
           </Toolbar>
         </Container10>
       </AppBar>

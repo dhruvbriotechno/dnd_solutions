@@ -1,9 +1,9 @@
-import React from 'react';
-import SliderTable from '../../../components/admin/Slider';
-import OfferTable from '../../../components/admin/Offer';
-import { useLocation } from 'react-router-dom';
-import { useStyles } from './dashboard.style';
 import { Box } from '@mui/material';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import OfferTable from '../../../components/admin/Offer';
+import SliderTable from '../../../components/admin/Slider';
+import { useStyles } from './dashboard.style';
 
 const AdminDashboard = () => {
   const classes = useStyles();

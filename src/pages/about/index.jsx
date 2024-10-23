@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useStyles } from './about.style';
 import { Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import HeroSec from '../../components/shared/HeroSec';
+import React, { useEffect } from 'react';
 import { Container1200 } from '../../components/shared/CustomContainer';
-
+import HeroSec from '../../components/shared/HeroSec';
+import { useStyles } from './about.style';
+ 
 
 
 const About = () => {
@@ -27,8 +27,8 @@ const About = () => {
         <HeroSec title={"About Us"} />
         <Container1200 className={" pt-12 pb-6 "} >
           <Card sx={{ display: 'flex', marginBottom: '30px', boxShadow: 'none' }}>
-            <Grid container>
-              <Grid item xs={12}>
+            <Grid container spacing={5}>
+              <Grid item lg={6} xs={12}>
                 <CardContent sx={{}} >
                   <Typography component="div" variant="h4" sx={{ marginBottom: '15px', fontWeight: '600' }}>
                     Welcome to DnD Solutions!
@@ -48,14 +48,17 @@ const About = () => {
                   <Typography variant="body2" color="text.secondary" component="p" sx={{ marginBottom: '16px', fontSize: '16px' }}>Thank you for choosing DnD Solutions. We look forward to partnering with you and contributing to your achievements.</Typography>
                 </CardContent>
               </Grid>
+              <Grid item lg={6} xs={12}>
+                <CardMedia
+                  component="img"
+                  sx={{padding: '0 10px' }}
+                  image={require(`${process.env.REACT_APP_IMAGES_PATH}/about/about.jpg`)}
+                  alt="Card Image"
+                />
+              </Grid>
             </Grid>
 
-            <CardMedia
-              component="img"
-              sx={{ marginLeft: '40px' }}
-              image={`${process.env.PUBLIC_URL}/images/service/adjuvants.webp`}
-              alt="Card Image"
-            />
+
           </Card>
         </Container1200>
       </Box>

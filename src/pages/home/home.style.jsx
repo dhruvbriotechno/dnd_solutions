@@ -1,8 +1,18 @@
 import { makeStyles } from "@mui/styles";
 import { theme } from "../../theme";
+import visionBg from "../../assets/img/images/bg/vision-design.webp"
+import productSlider from "../../assets/img/images/bg/product-bg.webp"
+import whyChooseBg from "../../assets/img/images/bg/ag-pic-18.webp"
+import growMoreBgg from "../../assets/img/images/bg/bg-section-01.webp"
+
 
 export const useStyles = makeStyles(() => ({
 
+    main_slider: {
+        "& .slick-list": {
+            height: '80vh'
+        }
+    },
 
     // Main Slider 
     mainSlide: {
@@ -178,7 +188,7 @@ export const useStyles = makeStyles(() => ({
 
     growMoreBg: {
         "backgroundColor": "#fff", "padding": "50px 0 50px 0",
-        "backgroundImage": `url(${process.env.PUBLIC_URL}/images/bg/bg-section-01.webp)`,
+        "backgroundImage": `url(${growMoreBgg})`,
         "backgroundRepeat": "no-repeat", "backgroundPosition": "center top"
     },
 
@@ -217,7 +227,8 @@ export const useStyles = makeStyles(() => ({
 
 
     visionMission: {
-        "backgroundImage": `url(${process.env.PUBLIC_URL}/images/bg/vision-design.webp)`, "backgroundRepeat": "no-repeat", "padding": "100px 0 150px 0", "backgroundPosition": "center top"
+        "backgroundImage": `url(${visionBg})`, "backgroundRepeat": "no-repeat", "padding": "100px 0 150px 0", "backgroundPosition": "center top",
+
     },
 
 
@@ -225,7 +236,8 @@ export const useStyles = makeStyles(() => ({
     // =====================================
     productsSliderStyle: {
         "backgroundColor": "#ffc000", "padding": "50px 0",
-        "backgroundImage": `url(${process.env.PUBLIC_URL}/images/bg/product-bg.webp)`,
+        // "backgroundImage": `url(${process.env.REACT_APP_IMAGES_PATH}/images/bg/product-bg.webp)`,
+        backgroundImage: `url(${productSlider})`,
         "backgroundAttachment": "fixed", "backgroundRepeat": "no-repeat", "backgroundPosition": "center",
 
         "& .prod-img": {
@@ -259,7 +271,7 @@ export const useStyles = makeStyles(() => ({
 
     whyChooseStyle: {
         "padding": "100px 0 55px 0",
-        "backgroundImage": `url(${process.env.PUBLIC_URL}/images/bg/ag-pic-18.webp)`,
+        "backgroundImage": `url(${whyChooseBg})`,
         "backgroundRepeat": "no-repeat", "backgroundPosition": "center -250px", "backgroundSize": "cover",
 
         "& .whyChooseBox": {
@@ -283,6 +295,7 @@ export const useStyles = makeStyles(() => ({
     // ====================================
     // ====================================
     [theme.breakpoints.down('md')]: {
+
         ourCounter: {
             gridTemplateColumns: 'auto auto',
             gap: '20px'
@@ -303,6 +316,7 @@ export const useStyles = makeStyles(() => ({
             gridTemplateColumns: 'auto',
             gridGap: '50px',
             marginTop: '30px',
+            gridRowGap: "0"
 
         },
         contentSec: {

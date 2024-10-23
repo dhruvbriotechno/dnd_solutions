@@ -160,6 +160,7 @@ export const useStyles = makeStyles(() => ({
       display: "block",
       color: "#a9a9a9",
       cursor: "pointer",
+      marginLeft: '50px'
     },
   },
 }));

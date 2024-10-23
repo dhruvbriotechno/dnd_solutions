@@ -1,6 +1,6 @@
-import React from 'react'
-import { useStyles } from './BannerWithTitle.style';
+import React from 'react';
 import { ContainerFluid } from '../shared/CustomContainer';
+import { useStyles } from './BannerWithTitle.style';
 
 const BannerWithTitle = ({image, title}) => {
     const classes = useStyles();

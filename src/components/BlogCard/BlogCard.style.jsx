@@ -65,6 +65,7 @@ export const useStyles = makeStyles(() => ({
         blogStyleParent: {
             gridTemplateColumns: 'auto auto',
             gridGap: '50px',
+            
             // marginTop: '30px',
         },
         blogItem: {

@@ -7,20 +7,35 @@ import "./App.css";
 import LoginAdmin from "./components/auth/LoginAdmin";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import withBanner from './hoc/withBanner';
 import About from "./pages/about";
 import AdminDashboards from "./pages/admin/dashboard";
-import Home from "./pages/home";
-import ProtectedRoute from "./state-management/admin/login/ProtectedRoute";
-import Products from './pages/products';
 import ContactUs from './pages/contact';
+import Home from "./pages/home";
 import Media from './pages/media';
+import Products from './pages/products';
+import BioBasedOrganicSolidFertilizer from './pages/products/OrganicFertilizers/BioBasedOrganicSolidFertilizer';
+import OrganicActiveCapsuleFertilizer from './pages/products/OrganicFertilizers/OrganicActiveCapsuleFertilizer';
 import OrganicLiquidFertilizer from './pages/products/OrganicFertilizers/OrganicLiquidFertilizer';
-import withBanner from './hoc/withBanner';
+import ProtectedRoute from "./state-management/admin/login/ProtectedRoute";
+import solidFertilize from "./assets/img/products/organic-fertilizer/solidFertilize.jpg";
+import CapsuleFertilizer from "./assets/img/products/organic-fertilizer/Organic-Active-Capsule-Fertilizer.jpg";
+import liquidFertilizer from "./assets/img/products/organic-fertilizer/liquidFertilizer.jpg";
+import ConcreteBondingPowder from './pages/products/ConstructionChemicals/ConcreteBondingPowder';
+import NanotechWaterproofingLiquidChemical from './pages/products/ConstructionChemicals/NanotechWaterproofingLiquidChemical';
+
 
 function App() {
   const isAuthenticated = useSelector((state) => state.adminLogin.isAuthenticated);
 
-  const LiquidFertilizer = withBanner(OrganicLiquidFertilizer, `${process.env.PUBLIC_URL}/images/bg/product-banner.webp`, 'Organic Liquid Fertilizer');
+  // Organic Fertilizer 
+  const OrganicLiquidFertilizer__ = withBanner(OrganicLiquidFertilizer, `${liquidFertilizer}`, 'Organic Liquid Fertilizer');
+  const BioBasedOrganicSolidFertilizer__ = withBanner(BioBasedOrganicSolidFertilizer, `${solidFertilize}`, 'Bio based Organic solid Fertilizer');
+  const OrganicActiveCapsuleFertilizer__ = withBanner(OrganicActiveCapsuleFertilizer, `${CapsuleFertilizer}`, 'Organic Active Capsule Fertilizer');
+
+  // Construction Chemicals
+  const ConcreteBondingPowder__ = withBanner(ConcreteBondingPowder, `${CapsuleFertilizer}`, 'Concrete Bonding Powder');
+  const NanotechWaterproofingLiquidChemical__ = withBanner(NanotechWaterproofingLiquidChemical, `${CapsuleFertilizer}`, 'Nano technology based Water proofing Chemical');
 
 
   return (
@@ -37,10 +52,21 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/products/organic-liquid-fertilizer" element={<LiquidFertilizer />} />
+        {/* Products Starts */}
+        {/* Organic Fertilizer  */}
+        <Route path="/products/organic-liquid-fertilizer" element={<OrganicLiquidFertilizer__ />} />
+        <Route path="/products/bio-based-organic-solid-fertilizer" element={<BioBasedOrganicSolidFertilizer__ />} />
+        <Route path="/products/organic-active-capsule-fertilizer" element={<OrganicActiveCapsuleFertilizer__ />} />
+
+        {/* Construction Chemicals */}
+        <Route path="/products/concrete-bonding-powder" element={<ConcreteBondingPowder__ />} />
+        <Route path="/products/nano-technology-based-water-proofing-chemical" element={<NanotechWaterproofingLiquidChemical__ />} />
+
+        {/* Products End */}
+
         <Route path="/media" element={<Media />} />
         <Route path="/contact" element={<ContactUs />} />
-       
+
       </Routes>
       <Footer />
     </Router>

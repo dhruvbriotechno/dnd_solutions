@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { updateSlider } from '../../../../state-management/admin/slider/updateSlider/sliderActions';
-import {
-  Container,
-  TextField,
-  Button,
-  Typography,
-  CircularProgress,
-  Box,
-  Alert,
-  Grid,
-} from '@mui/material';
-import { getSliderById } from '../../../../state-management/admin/slider/getSingleSlider/sliderActions';
-import { toast } from 'react-toastify';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import {ButtonBorder,ButtonFullBlack} from'../../../shared/ButtonCustom/index'
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  TextField,
+  Typography
+} from '@mui/material';
+import { useFormik } from 'formik';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import * as Yup from 'yup';
+import { getSliderById } from '../../../../state-management/admin/slider/getSingleSlider/sliderActions';
+import { updateSlider } from '../../../../state-management/admin/slider/updateSlider/sliderActions';
+import { ButtonFullBlack } from '../../../shared/ButtonCustom/index';
 
 const EditSlider = ({ sliderId, handleCloseEdit }) => {
   const dispatch = useDispatch();

@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { addSlider } from '../../../../state-management/admin/slider/addSlider/sliderActions';
-import {
-  Container,
-  TextField,
-  Button,
-  Typography,
-  CircularProgress,
-  Box,
-  Alert,
-  Grid,
-} from '@mui/material';
-import { toast } from 'react-toastify';
 import AddIcon from '@mui/icons-material/Add';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import {ButtonBorder,ButtonFullBlack} from'../../../shared/ButtonCustom/index'
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  TextField,
+  Typography
+} from '@mui/material';
+import { useFormik } from 'formik';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import * as Yup from 'yup';
+import { addSlider } from '../../../../state-management/admin/slider/addSlider/sliderActions';
+import { ButtonFullBlack } from '../../../shared/ButtonCustom/index';
 
 const AddSlider = ({ handleCloseAdd }) => {
   const dispatch = useDispatch();

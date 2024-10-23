@@ -1,42 +1,30 @@
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import { Avatar, Box, Grid, Skeleton } from "@mui/material";
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import { Box, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ServiceCard from "../../components/ServiceCard";
 import CarouselComponent from "../../components/Slider";
+import VerticalTabs from "../../components/TabVertical";
 import { ButtonBorder } from "../../components/shared/ButtonCustom";
 import {
-  Container10,
-  Container100,
-  Container1140,
-  Container1200,
-  ContainerFluid
+  Container1200
 } from "../../components/shared/CustomContainer";
 import TitleSection from "../../components/shared/TitleSection";
 import { useStylesGloble } from "../../global.style";
+import { fetchSliders } from "../../state-management/admin/slider/getAllSliders/sliderActions";
 import { useStyles } from "./home.style";
 import {
-  aboutUsData,
   counterData,
-  ourNumberData,
-  partnerBrandsData,
   servicesData,
   settingsMainSlider,
-  settingsPartnerBrandsSlider,
   settingsProductsSlider,
-  settingsTestiSlider,
   slidesMain,
   slidesProducts,
   tabsContentVisionMissoin,
   tabsVisionMissoin,
-  testimonialsData,
   WhyChooseData
 } from "./homeData";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchSliders } from "../../state-management/admin/slider/getAllSliders/sliderActions";
-import noImage from "../../assets/bg/no-banner.jpg"
-import { Loader } from "../../components/shared/Loader";
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-import VerticalTabs from "../../components/TabVertical";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const global = useStylesGloble();
@@ -67,43 +55,48 @@ const Home = () => {
   //   return () => { };
   // }, []);
 
+  const navigate = useNavigate(); 
 
-  console.log("MainSlider.sliders", MainSlider.sliders?.length)
+  const handleNavigationAbout = () => {
+    navigate('/about'); 
+  };
+
+
   return (
     <>
       {/* main Slider  */}
+      <Box className={classes.main_slider}>
+        <CarouselComponent settings={settingsMainSlider} slides={slidesMain}>
+          {slidesMain.map((slide, index) => (
+            <Box key={index} className={global.slide}>
+              <img className={global.bannerImg} src={slide.image} alt="" />
+            </Box>
+          ))}
+        </CarouselComponent>
+      </Box>
 
-      <CarouselComponent settings={settingsMainSlider} slides={slidesMain}>
-        {slidesMain.map((slide, index) => (
-          <Box key={index} className={global.slide}>
-            <img className={global.bannerImg} src={slide.image} alt="" />
-          </Box>
-        ))}
-      </CarouselComponent>
-
-
-      {/* GROW MORE Agrichem India Pvt. Ltd. */}
+      {/* DnD Solutions */}
       <Container1200 className={classes.growMoreBg + " py-16 "} >
-        <Grid container spacing={2}>
-          <Grid item xs={7}>
+        <Grid className=' lg:px-0 px-2' container spacing={2}>
+          <Grid item lg={7} xs={12}>
             <Box className={classes.headingWithLine + ' ' + 'flex gap-5 items-center'}>
               <Box className={classes.home_welcome}>
                 <div className="flex gap-5">
                   <div className="servece_0111 mt-[15px] mb-5" ></div>
-                  <span>GROW MORE Agrichem India Pvt. Ltd.</span>
+                  <span>DnD Solutions</span>
                 </div><br />
                 <h1>Organic Bio Fertilizer</h1>
                 <p className="tagline">Largely most of the farmers know that soil health is critical to their business.</p>
                 <p>“We are not treating the plant, we are treating the  soil. We feel if you treat the soil right and if you take care of the soil,  your crops will definitely rise”.</p><br />
-
               </Box>
-
             </Box>
-            <ButtonBorder>Read More...</ButtonBorder>
+            <Box className="lg:text-left text-center">
+              <ButtonBorder onClick={handleNavigationAbout}>Read More...</ButtonBorder>
+            </Box>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item lg={5} xs={12}>
             <Box className={classes.imagesSec}>
-              <img src={`${process.env.PUBLIC_URL}/images/about/about.webp`} alt={"image"} />
+              <img src={require(`${process.env.REACT_APP_IMAGES_PATH}/about/about.jpg`)} alt={"image"} />
             </Box>
           </Grid>
         </Grid>
@@ -122,10 +115,10 @@ const Home = () => {
       {/* Counter */}
       <Container1200 className={classes.counterBg + "  "} >
         <Grid container spacing={1}>
-          <Grid item xs={10} className="counter-green  ">
+          <Grid item lg={8} xs={6} className="counter-green  ">
             <Grid container spacing={2} >
               {counterData.map((db, index) => (
-                <Grid item xs={4}>
+                <Grid item lg={4} xs={12}>
                   <Box className={classes.counter + '  text-white '}>
                     <div className="number flex gap-5 items-center mb-2">
                       {db.icon}
@@ -137,13 +130,13 @@ const Home = () => {
               ))}
             </Grid>
           </Grid>
-          <Grid item xs={2} className="counter-yellow ">
+          <Grid item lg={4} xs={6} className="counter-yellow ">
             <Box className="">
               <div className="number flex gap-2 items-center mb-2">
                 <PhoneIphoneIcon sx={{ width: '44px', height: 'auto' }} />
                 <h1 className="text-2xl leading-7">Call for help!</h1>
               </div>
-              <h3 className="text-xl font-extrabold">+91 78638 93739</h3>
+              <h3 className="text-xl font-extrabold">+91 95377 17567</h3>
             </Box>
           </Grid>
         </Grid>
@@ -174,22 +167,24 @@ const Home = () => {
         </Container1200>
       </Box>
 
-      {/* Why Choose GROW MORE ? */}
+      {/* Why Choose DnD Solutions ? */}
       <Box className={classes.whyChooseStyle}>
-        <TitleSection title={"Why Choose GROW MORE ?"} className={"productTitle"} />
-        <div className="servece-0111" />
-        <Container1200 className={"  "} >
-          <Grid container spacing={2}>
-            {WhyChooseData && WhyChooseData.map((db, index) => (
-              <Grid item xs={3}>
-                <Box className={"whyChooseBox"}>
-                  <Box className="list-icon">{db.icon}</Box>
-                  <h3 className="title">{db.title}</h3>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Container1200>
+        <Box className="lg:px-0 px-2">
+          <TitleSection title={"Why Choose DnD Solutions ?"} className={"productTitle"} />
+          <div className="servece-0111" />
+          <Container1200 className={"  "} >
+            <Grid container spacing={2}>
+              {WhyChooseData && WhyChooseData.map((db, index) => (
+                <Grid item lg={3} xs={4}>
+                  <Box className={"whyChooseBox"}>
+                    <Box className="list-icon">{db.icon}</Box>
+                    <h3 className="title">{db.title}</h3>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Container1200>
+        </Box>
       </Box>
 
 

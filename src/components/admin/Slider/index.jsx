@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@mui/styles';
-import { Button, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, Grid, Stack, ListItem, Avatar, ListItemAvatar, ListItemText, CircularProgress } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useStyles } from './slider.style';
-import { Container1320 } from '../../shared/CustomContainer';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import EditIcon from '@mui/icons-material/Edit';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { Box, Button, CircularProgress, Grid, IconButton, ListItem, ListItemAvatar, ListItemText, Stack } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { deleteSlider } from '../../../state-management/admin/slider/deleteSlider/sliderActions';
+import { fetchSliders } from '../../../state-management/admin/slider/getAllSliders/sliderActions';
+import { getSliderById } from '../../../state-management/admin/slider/getSingleSlider/sliderActions';
 import { ButtonBorder } from '../../shared/ButtonCustom';
+import { Container1320 } from '../../shared/CustomContainer';
+import { Loader } from "../../shared/Loader";
 import { MyModalWithHeader } from '../../shared/MyModal';
 import AddSlider from './AddSlider';
 import EditSlider from './EditSlider';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchSliders } from '../../../state-management/admin/slider/getAllSliders/sliderActions';
-import { deleteSlider } from '../../../state-management/admin/slider/deleteSlider/sliderActions';
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { getSliderById } from '../../../state-management/admin/slider/getSingleSlider/sliderActions';
-import { Loader} from "../../shared/Loader"
+import { useStyles } from './slider.style';
 
 const SliderTable = () => {
     const classes = useStyles();

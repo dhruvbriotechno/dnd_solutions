@@ -1,11 +1,9 @@
-import { makeStyles } from "@mui/styles";
-import { Tabs, Tab, Box, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { useState } from "react";
-import { useStyles } from "./servicetab.style";
+import barbershop from "../../assets/Images//barber-shop-services.jpg";
 import hair from "../../assets/Images/hair-services.jpg";
 import skin from "../../assets/Images/skin-services.jpg";
-import barbershop from "../../assets/Images//barber-shop-services.jpg";
-import makeup from "../../assets/Images/makeup-services.jpg";
+import { useStyles } from "./servicetab.style";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
